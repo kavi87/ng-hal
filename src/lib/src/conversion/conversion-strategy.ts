@@ -1,7 +1,7 @@
 import { OpaqueToken }  from '@angular/core';
 import { Response }     from '@angular/http';
 
-import { Resource }     from '../hal';
+import { Resource }     from '../hal/resource.interface';
 
 
 /** Concrete converters need to implement this interface. */

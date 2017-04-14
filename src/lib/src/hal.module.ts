@@ -1,8 +1,9 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 
-import { CONVERSION_STRATEGY, ConversionStrategy, JsonConversionStrategy } from './conversion';
+import { CONVERSION_STRATEGY, ConversionStrategy } from './conversion/conversion-strategy';
+import { JsonConversionStrategy } from './conversion/json-conversion-strategy';
+import { Parser } from './hal/parser';
 import { Navigator } from './navigator';
-import { Parser } from './parser';
 
 
 export function jsonConversionProvider(parser: Parser) {

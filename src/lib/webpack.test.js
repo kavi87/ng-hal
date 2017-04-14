@@ -92,7 +92,7 @@ module.exports = function (options) {
           loader: 'awesome-typescript-loader',
           exclude: [/\.e2e\.ts$/],
           query: {
-            configFileName: 'tsconfig.test.json',
+            configFileName: path.resolve(__dirname, 'tsconfig.test.json'),
 
             // use inline sourcemaps for "karma-remap-coverage" reporter
             sourceMap: false,

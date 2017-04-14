@@ -17,8 +17,8 @@ import 'rxjs/add/operator/map';
 import {
   ConversionStrategy,
   CONVERSION_STRATEGY
-}                               from './conversion';
-import { Resource }             from './hal';
+}                               from './conversion/conversion-strategy';
+import { Resource }             from './hal/resource.interface';
 
 import { Document }             from './document';
 

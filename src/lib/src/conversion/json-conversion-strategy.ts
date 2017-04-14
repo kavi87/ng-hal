@@ -1,8 +1,8 @@
 import { Response }             from '@angular/http';
 
+import { Parser }               from '../hal/parser';
+import { Resource }             from '../hal/resource.interface';
 import { ConversionStrategy }   from './conversion-strategy';
-import { Parser }               from '../parser';
-import { Resource }             from '../hal';
 
 
 /** A converter for 'application/hal+json' */
@@ -21,6 +21,7 @@ export class JsonConversionStrategy implements ConversionStrategy {
   convert(response: Response): Resource {
     let data = response.json();
 
+    // TODO: need proper resource object
     return this.parser.parse(data);
   }
 

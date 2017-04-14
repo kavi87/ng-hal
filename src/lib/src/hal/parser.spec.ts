@@ -158,7 +158,7 @@ describe(`Parser`, () => {
   it(`parses the minimal sample`, () => {
     const result = parser.parse(FIXTURES.MINIMAL);
 
-    expect(result).toBeDefined();
+    expect(result).toBeTruthy();
     expect(result.linkArray('self')).toEqual([{ href: 'dummy', templated: false }]);
   });
 
@@ -189,13 +189,13 @@ describe(`Parser`, () => {
 
   it(`returns a Resource with linkArray()`, () => {
     let link1 = parser.parse(FIXTURES.MINIMAL).linkArray('self');
-    expect(link1).toBeDefined();
+    expect(link1).toBeTruthy();
     expect(link1.length).toBeGreaterThan(0);
     expect(link1[0].href).toBe('dummy');
     expect(link1[0].templated).toBe(false);
 
     let link2 = parser.parse(FIXTURES.CURIES).linkArray('self');
-    expect(link2).toBeDefined();
+    expect(link2).toBeTruthy();
     expect(link2.length).toBeGreaterThan(0);
     expect(link2[0].href).toBe('/orders');
     expect(link2[0].templated).toBe(false);

@@ -1,8 +1,7 @@
 import { Headers, Response, ResponseOptions } from '@angular/http';
 
-import { Parser } from '../parser';
-import { InternalResourceWrapper } from '../parser/internal-resource-wrapper';
-import { Resource } from '../hal';
+import { Parser } from '../hal/parser';
+import { Resource } from '../hal/resource.interface';
 
 import { JsonConversionStrategy } from './json-conversion-strategy';
 
@@ -19,10 +18,7 @@ describe(`JsonConversionStrategy`, () => {
     mockJsonResponse = new Response(new ResponseOptions({ body, headers }));
 
     fakeParser = new Parser();
-    spyOn(fakeParser, 'parse').and.callFake((input: any): Resource => {
-
-      return new InternalResourceWrapper({});
-    });
+    spyOn(fakeParser, 'parse').and.callFake((input: any): any => { return {}; });
 
     jsonConversion = new JsonConversionStrategy(fakeParser);
   });
